@@ -1,0 +1,23 @@
+#Preparation of 6LUD Protein
+
+pdb4amber -i 6lud-protein.pdb -o 6lud-amber.pdb --nohyd
+
+tleap
+source leaprc.protein.ff14SB
+x = loadpdb 6lud-amber.pdb
+savepdb x 6lud-fix.pdb
+quit
+
+tleap
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+x = loadpdb 6lud-fix.pdb
+check x
+charge x
+addions x Na+ 0
+charge x
+solvatebox x TIP3PBOX 10.0
+check x
+saveamberparm x solvated.prmtop solvated.inpcrd
+savepdb x solvated.pdb
+quit

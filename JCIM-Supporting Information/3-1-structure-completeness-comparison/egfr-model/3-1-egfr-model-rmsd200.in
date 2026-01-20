@@ -1,0 +1,5 @@
+trajin run1.crd
+trajin run2.crd
+trajin run3.crd
+trajin run4.crd
+rms first mass out rmsd200.xvg :1-310@CA,C,N

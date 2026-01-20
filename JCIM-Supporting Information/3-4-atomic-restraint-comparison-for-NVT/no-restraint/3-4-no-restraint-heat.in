@@ -1,0 +1,10 @@
+#Heating up the system equilibration stage 1, 0-310K
+#1 step is 0.5 fs so total step is 20 ps
+#snapshot is taken every 100 step or 0.05 ps so total 400 snapshots
+&cntrl
+imin=0,ntx=1,irest=0,
+ntpr=100,ntwr=100,ntwx=100,
+nstlim=40000,dt=0.0005,
+ntt=3,gamma_ln=1,temp0=310, tempi=0,
+ntb=1,cut=9,ntf=1,
+/
